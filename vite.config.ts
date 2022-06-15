@@ -1,34 +1,46 @@
 // @ts-nocheck
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import vitePluginImp from 'vite-plugin-imp';
-import { getThemeVariables } from 'antd/dist/theme';
+import vitePluginImp from 'vite-plugin-imp'
+import { getThemeVariables } from 'antd/dist/theme'
 // https://vitejs.dev/config/
 export default defineConfig({
+  test: {
+    globals: true,
+    reporters: ['verbose'],
+    coverage: {
+      all: true,
+      reporter: ['text', 'html', 'lcov'],
+      statements: 0,
+      branches: 0,
+      functions: 0,
+      lines: 0
+    }
+  },
   plugins: [
     react(),
     vitePluginImp({
       libList: [
         {
           libName: 'antd',
-          style: (name) => `antd/es/${name}/style`,
-        },
-      ],
-    }),
+          style: (name) => `antd/es/${name}/style`
+        }
+      ]
+    })
   ],
   server: {
-    port : 4001,
+    port: 4001
   },
-   css: {
+  css: {
     preprocessorOptions: {
-       less: {
-        modifyVars: { 'primary-color': '#13c2c2' },
+      less: {
+        // modifyVars: { 'primary-color': '#13c2c2' },
         modifyVars: getThemeVariables({
-          dark: true,
+          dark: true
           // compact: true,
         }),
-        javascriptEnabled: true,
-      },
-    },
-  },
+        javascriptEnabled: true
+      }
+    }
+  }
 })
