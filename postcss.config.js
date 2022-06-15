@@ -3,4 +3,4 @@ module.exports = {
     'postcss-nesting': true,
     autoprefixer: true
   }
-}
+};

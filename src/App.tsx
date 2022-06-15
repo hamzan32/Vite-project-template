@@ -1,38 +1,27 @@
-import './App.scss'
-import { useState } from 'react'
-import { Button, DatePicker, Modal } from 'antd'
-function App () {
-  const [count, setCount] = useState(0)
-  const [isModalVisible, setIsModalVisible] = useState(false)
+import './App.scss';
+import { useState } from 'react';
+import { Button, DatePicker, Modal } from 'antd';
+import SiderNav from '@/components/shell/Navbar/Navbar';
+function App() {
+  const [count, setCount] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const showModal = () => {
-    setIsModalVisible(true)
-  }
+    setIsModalVisible(true);
+  };
 
   const handleOk = () => {
-    setIsModalVisible(false)
-  }
+    setIsModalVisible(false);
+  };
 
   const handleCancel = () => {
-    setIsModalVisible(false)
-  }
+    setIsModalVisible(false);
+  };
 
   return (
     <div className="App">
-      <Button type="primary" onClick={showModal}>
-        Open Modal
-      </Button>
-      <Modal
-        title="Basic Modal"
-        visible={isModalVisible}
-        onCancel={handleCancel}
-        onOk={handleOk}
-      >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
+      <SiderNav />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
