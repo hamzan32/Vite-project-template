@@ -1,16 +1,16 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: ['plugin:react/recommended', 'standard', 'plugin:react/jsx-runtime'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'html'],
   rules: {
@@ -25,8 +25,8 @@ module.exports = {
       {
         blankLine: 'any',
         prev: ['const', 'let', 'var'],
-        next: ['const', 'let', 'var']
-      }
+        next: ['const', 'let', 'var'],
+      },
     ],
     'import/order': [
       'warn',
@@ -35,11 +35,11 @@ module.exports = {
           {
             pattern: '~/**',
             group: 'external',
-            position: 'after'
-          }
+            position: 'after',
+          },
         ],
-        'newlines-between': 'always-and-inside-groups'
-      }
+        'newlines-between': 'always-and-inside-groups',
+      },
     ],
     'react/jsx-sort-props': [
       'warn',
@@ -47,13 +47,13 @@ module.exports = {
         callbacksLast: true,
         shorthandFirst: true,
         noSortAlphabetically: false,
-        reservedFirst: true
-      }
-    ]
+        reservedFirst: true,
+      },
+    ],
   },
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
+      version: 'detect',
+    },
+  },
 }
