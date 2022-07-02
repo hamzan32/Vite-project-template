@@ -1,0 +1,337 @@
+@importurl ("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+$primary-font: 'Roboto';
+$secondary-font: 'GGSEtwo';
+$primary-color: #25408f;
+$secondary-color: #ff7300;
+$font-color: #666666;
+$light-font: #b4b4b4;
+$background-color: #fdfdfc;
+$border-color: #ededed;
+$light-gray: #eff1f7;
+$danger: #db2955;
+$warning: #ffd84d;
+$success: #28a745;
+$purple: #9d6bff;
+$blue: #1e40af;
+$blue-shade: #6a86e1;
+$screen-lap: 1440px;
+$screen-small: 1280px;
+$screen-medium: 1080px;
+$screen-tab: 812px;
+$screen-mobile: 768px;
+@mixintheme-colors ($dark-theme:true) {
+  @if dark-theme {
+    $primary-color: #4f46e5;
+    $font-color: #ffffff;
+    $light-font: #b4b4b4;
+    $background-color: #0d0d0d;
+    $border-color: #363636;
+  } @else {
+    $primary-color: #4f46e5;
+    $font-color: #111827;
+    $light-font: #b4b4b4;
+    $background-color: #ffffff;
+    $border-color: #ededed;
+  }
+}
+@mixinline-clamp ($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@mixinlanguage ($language:true) {
+  @if language {
+    $primary-font: 'Roboto';
+  } @else {
+    $primary-font: 'GGSEtwo';
+  }
+}
+
+@mixinrow {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixincolumn {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixinwrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixinrow-reverse {
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+@mixincolumn-reverse {
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+@mixinjustify-start {
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+@mixinjustify-center {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+@mixinjustify-end {
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+@mixinjustify-around {
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+@mixinjustify-space-between {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@mixinalign-start {
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+@mixinalign-center {
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@mixinalign-end {
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+@mixinflex ($x) {
+  -ms-flex: 11x;
+  flex: 11x;
+  max-width: x;
+}
+
+@mixinborder-radius ($x) {
+  -webkit-border-radius: $x;
+  border-radius: $x;
+}
+
+@mixinbox-shadow ($x,$y,$z,$c) {
+  -webkit-box-shadow: $x$y$z$c;
+  box-shadow: $x$y$z$c;
+}
+
+@mixintranslate ($x,$y,$z) {
+  -webkit-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+@mixintransform ($content) {
+  -webkit-transform: $content;
+  -ms-transform: $content;
+  transform: $content;
+}
+
+@mixintransition ($content) {
+  -webkit-transition: $content;
+  transition: $content;
+}
+
+@mixintransitioncubic {
+  -webkit-transition: allcubic-bezier(0.3, 0.4, 0.5, 0.6) 0.3s;
+  transition: allcubic-bezier(0.3, 0.4, 0.5, 0.6) 0.3s;
+}
+
+@mixintransitioncubic2 {
+  -webkit-transition: allcubic-bezier(0.65, 0.05, 0.36, 1) 0.4s;
+  transition: allcubic-bezier(0.65, 0.05, 0.36, 1) 0.4s;
+}
+
+@mixinbox-sizing {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixinwrapper ($w) {
+  max-width: $w;
+  margin: 0auto;
+}
+
+/*Responsive*/
+
+@mixinfor-responsive ($breakpoint) {
+  @media (max-width:#{$breakpoint}) {
+  }
+}
+
+@mixinfor-edge() {
+  @supports (-ms-ime-align: auto) {
+  }
+}
+
+body::-webkit-scrollbar {
+  @includeborder-radius (4px);
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+  box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1pxsolidslategrey;
+}
+
+/*Reset*/
+
+* {
+  @includebox-sizing;
+}
+
+img,
+a {
+  vertical-align: top;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.loader {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1099;
+  background-color: #69696980;
+  img {
+    width: 75px;
+  }
+}
+
+._btn-primary {
+  background: #007bff;
+  color: #fff;
+  @includeborder-radius (4px);
+}
+
+//loaderwork
+.loader-section {
+  margin: 0;
+  padding: 0;
+  background: rgba(52, 73, 94, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'montserrat', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+}
+
+.loading {
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 10pxsolid#2a2a2a;
+  position: relative;
+  animation: a12slinearinfinite;
+}
+
+.loading::before,
+.loading::after {
+  content: '';
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.loading::before {
+  border-top: 10pxsolid#01aef0;
+  transform: rotate(120deg);
+}
+
+.loading::after {
+  border-top: 10pxsolid#72b645;
+  transform: rotate(240deg);
+}
+
+.loadingspan {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  color: #fff;
+  text-align: center;
+  line-height: 200px;
+  animation: a22slinearinfinite;
+}
+
+@keyframesa1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframesa2 {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.warningInput {
+  border: 1pxsolid#ff0000 !important;
+}
+
+.warningSpan {
+  margin-bottom: 0px !important;
+}
+
+.warningInputBorder {
+  ::ng-deep.mat-form-field-underline {
+    background-color: #ff0000;
+  }
+}
+
+.option-warning {
+  border-bottom: 1pxsolid#ff0000;
+}
+
+.radioNull {
+  ::ng-deep.mat-radio-outer-circle {
+    border: 1pxsolid#ff0000;
+  }
+}
+
+::ng-deep.wa-get-started-button {
+  @includefor-responsive ($screen-mobile) {
+    bottom: 115px !important;
+  }
+}

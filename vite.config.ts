@@ -43,8 +43,8 @@ export default defineConfig({
       less: {
         // modifyVars: { 'primary-color': '#13c2c2' },
         modifyVars: getThemeVariables({
-          dark: true,
-          // compact: true,
+          // dark: true,
+          compact: true,
         }),
         javascriptEnabled: true,
       },
