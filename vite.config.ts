@@ -4,10 +4,12 @@ import react from '@vitejs/plugin-react';
 import vitePluginImp from 'vite-plugin-imp';
 import { getThemeVariables } from 'antd/dist/theme';
 import path from 'path';
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+    sassLoader: {
+      includePaths: [path.resolve(__dirname, './template.scss')],
+    },
   },
   test: {
     globals: true,
