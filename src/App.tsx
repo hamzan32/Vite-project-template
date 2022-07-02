@@ -10,13 +10,32 @@ const App = () => {
       <Routes>
         {RouteArray.map((route: IRoute, i: number) => {
           return (
-            <Route key={i} path={route.path} element={<route.component />}>
+            <Route
+              key={i}
+              path={route.path}
+              element={
+                route.component ? (
+                  <route.component />
+                ) : (
+                  <Navigate to={route.data.to} />
+                )
+              }
+            >
               {route.children?.map((rc, j: number) => {
                 return (
-                  <Route path={rc.path} element={<rc.component />} key={j} />
+                  <Route
+                    path={rc.path}
+                    element={
+                      rc.component ? (
+                        <rc.component />
+                      ) : (
+                        <Navigate to={rc.data.to} />
+                      )
+                    }
+                    key={j}
+                  />
                 );
               })}
-              <Route path="*" element={<Navigate to="/" />} />
             </Route>
           );
         })}
