@@ -26,6 +26,12 @@ const route: IRoute[] = [
         data: null,
         name: 'sign-up',
       },
+      // {
+      //   path: '',
+      //   component: lazy(() => import('./components/Auth/SignUp/SignUp')),
+      //   data: null,
+      //   name: 'sign-up',
+      // },
     ],
   },
 ];
