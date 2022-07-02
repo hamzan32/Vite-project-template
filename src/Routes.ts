@@ -1,7 +1,5 @@
 import { IRoute } from './_models/route.model';
-
 import { lazy } from 'react';
-import { Navigate } from 'react-router-dom';
 const route: IRoute[] = [
   {
     path: '/',
