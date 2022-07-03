@@ -1,6 +1,7 @@
 import React from 'react';
 import './SignIn.scss';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { Col, Row } from 'antd';
 function SignIn() {
   const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -11,59 +12,80 @@ function SignIn() {
   };
   return (
     <>
-      <div className="signin-box">
-        <div className="form-signin">
-          <h3>LogIn HSI Talk</h3>
+      <Row>
+        <Col className="login-side" span={12}>
+          <h3>Sign in</h3>
           <Form
-            name="basic"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 16 }}
-            initialValues={{ remember: true }}
+            name="signin"
+            initialValues={{
+              remember: false,
+            }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
             autoComplete="off"
           >
-            <p>User Name</p>
             <Form.Item
-              name="username"
+              name="email"
+              hasFeedback
+              label="Email address"
+              labelCol={{ span: 24 }}
+              wrapperCol={{ span: 24 }}
               rules={[
-                { required: true, message: 'Please input your username!' },
+                {
+                  required: true,
+                  message: 'Please input your email.',
+                },
+                {
+                  type: 'email',
+                  message: 'Your email is invalid.',
+                },
               ]}
             >
-              <Input />
+              <Input placeholder="Email" size="large" />
             </Form.Item>
-            <p>Password</p>
+
             <Form.Item
               name="password"
+              hasFeedback
+              label="Password"
+              labelCol={{ span: 24 }}
+              wrapperCol={{ span: 24 }}
               rules={[
-                { required: true, message: 'Please input your password!' },
+                {
+                  required: true,
+                  message: 'Please input your password.',
+                },
+                { min: 6, message: 'Password must be minimum 6 characters.' },
               ]}
             >
-              <Input.Password />
+              <Input.Password placeholder="Password" size="large" />
             </Form.Item>
 
-            <Form.Item
-              name="remember"
-              valuePropName="checked"
-              wrapperCol={{ offset: 8, span: 16 }}
-            >
-              <Checkbox>Remember me</Checkbox>
-            </Form.Item>
+            <Form.Item>
+              <Form.Item name="remember" valuePropName="checked" noStyle>
+                <Checkbox>Remember me</Checkbox>
+              </Form.Item>
 
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Button type="primary" htmlType="submit">
-                Submit
+              <a className="login-form-forgot" href="#">
+                Forgot password?
+              </a>
+            </Form.Item>
+            <div className="signin-button">
+              <Button
+                type="primary"
+                htmlType="submit"
+                shape="round"
+                size="large"
+              >
+                Sign In
               </Button>
-            </Form.Item>
+            </div>
           </Form>
-        </div>
-        <div className="logo">
-          <img
-            src="https://lh3.googleusercontent.com/GENuEyVu2vuoXEZ7bKKaXYQYtKhlXYJ4pgcKjBVppSCpGuqvruIU-AJ8Gw6CF_iG6i6hWg=s170"
-            alt=""
-          />
-        </div>
-      </div>
+        </Col>
+        <Col className="right-side" span={12}>
+          col-12
+        </Col>
+      </Row>
     </>
   );
 }

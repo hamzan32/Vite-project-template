@@ -1,24 +1,42 @@
 @import '../../../template.scss';
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #3f4e4f;
+Row {
+  height: 100vh;
 }
-.signin-box {
-  background-color: #fff;
-  background-opacity: 0.5;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  // text-align: center;
+.login-side {
   display: flex;
-  align-items: center;
-  .form-signin {
-    width: 300px;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  h3 {
+    position: absolute;
+    top: 20%;
+    font-weight: 750;
+    color: $primary-color;
   }
-  .logo {
-    width: 200px;
+  Form {
+    position: absolute;
+    top: 30%;
+    width: 60%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    .signin-button {
+      transition: 0.5s ease-in-out;
+      button {
+        color: #fff;
+        font-size: 12px;
+        letter-spacing: 1px;
+
+        cursor: pointer;
+        margin: 8px 0;
+        width: 100%;
+      }
+    }
   }
+}
+.right-side {
+  background-color: #eb4747; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #eb4747, #ff8b8b);
+  height: 100vh;
 }
