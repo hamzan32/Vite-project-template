@@ -1,7 +1,5 @@
-import React from 'react';
 import './App.scss';
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
-import Auth from './pages/Auth';
 import RouteArray from './Routes';
 import { IRoute } from './_models/route.model';
 const App = () => {
