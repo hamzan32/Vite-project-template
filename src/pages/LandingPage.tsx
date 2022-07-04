@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import chatSocketService from '@/services/chat-socket.service';
 import { api } from '@/redux/socketMutation';
+import { Link, Navigate } from 'react-router-dom';
 function LandingPage() {
   useEffect(() => {
     chatSocketService.listen(`user-joined`).subscribe((response) => {
@@ -12,7 +13,11 @@ function LandingPage() {
   }, []);
   // const count = useSelector((state: RootState) => state.counter.value);
   // const dispatch = useDispatch();
-  return <h1>sarwar</h1>;
+  return (
+    <>
+      <Link to="auth/sign-in">signin</Link>
+    </>
+  );
 }
 
 export default LandingPage;
