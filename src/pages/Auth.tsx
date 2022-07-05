@@ -22,11 +22,11 @@ function Auth() {
             </p>
             {location.pathname.indexOf('sign-up') == -1 ? (
               <Button className="signup" type="text">
-                <Link to="sign-up">signup</Link>
+                <Link to="sign-up">Sign-Up</Link>
               </Button>
             ) : (
               <Button className="signup" type="text">
-                <Link to="sign-in">signin</Link>
+                <Link to="sign-in">Sign-In</Link>
               </Button>
             )}
           </div>

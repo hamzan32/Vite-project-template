@@ -2,39 +2,6 @@
 Row {
   height: 100vh;
 }
-.login-side {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  h3 {
-    position: absolute;
-    top: 20%;
-    font-weight: 750;
-    color: $primary-color;
-  }
-  Form {
-    position: absolute;
-    top: 30%;
-    width: 60%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    .signin-button {
-      transition: 0.5s ease-in-out;
-      button {
-        color: #fff;
-        font-size: 12px;
-        letter-spacing: 1px;
-
-        cursor: pointer;
-        margin: 8px 0;
-        width: 100%;
-      }
-    }
-  }
-}
 .right-side {
   background-color: #eb4747; /* For browsers that do not support gradients */
   background-image: linear-gradient(to left, #eb4747, #ff8b8b);

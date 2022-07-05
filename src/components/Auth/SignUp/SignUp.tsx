@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './SignUp.scss';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Col, Row } from 'antd';
 import { useRoutes } from 'react-router-dom';
